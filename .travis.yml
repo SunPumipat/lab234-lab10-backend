@@ -5,7 +5,7 @@ before_install:
     -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-  - docker login -u "sunjido" -p "211140san"
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 install:
   - mvn install -Dmaven.javadoc.skip-true -B -V
   - ls -l
