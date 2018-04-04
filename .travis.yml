@@ -10,8 +10,8 @@ install:
 - mvn install -Dmaven.javadoc.skip-true -B -V
 - ls -l
 - docker build --build-arg JAR_FILE=/target/lab10-backend.jar -t $DOCKER_USERNAME/se234-lab10-backend  .
-- docker push dto80/se234-lab10-backend
-- docker pull dto80/se234-lab10-client
+- docker push sunjido/se234-lab10-backend
+- docker pull sunjido/se234-lab10-client
 script:
 - docker-compose -H "$DOCKER_HOST" up -d
 cache:
