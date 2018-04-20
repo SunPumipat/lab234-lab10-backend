@@ -13,7 +13,7 @@ install:
 - docker push sunjido/se234-lab10-backend
 - docker pull sunjido/se234-lab10-client
 script:
-- docker-compose -H "tcp://52.14.107.181:2000" up
+- docker-compose -H "tcp://52.14.107.181:2000" up -d
 cache:
   directories:
   - "$HOME/.m2"
