@@ -1,11 +1,10 @@
 version: '3.3'
 services:
   backend:
-    image: sunjido/se234-lab-backend:latest
+    image: sunjido/se234-lab10-backend:latest
     ports:
       - "8082:8080"
   frontend:
     image: sunjido/se234-lab10-client:latest
     ports:
       - "8081:80"
-    
