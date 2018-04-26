@@ -30,7 +30,7 @@ public class GradeServiceImplTest {
     @Test
     @Parameters(method = "paramsForTestGetGradeParams")
     @TestCaseName("Test getGrade Params [{index}] : input is {0}, expect \"{1}\"")
-    public void testGetGradeparams(double score, String expectedGrade) {
+    public void testGatGradeparams(double score, String expectedGrade) {
         GradeServiceImpl gradeService = new GradeServiceImpl();
         assertThat(gradeService.getGrade(score), is(expectedGrade));
     }
@@ -39,6 +39,27 @@ public class GradeServiceImplTest {
         return new Object[][]{
                 {100, "A"},
                 {77, "B"},
+                {68, "C"},
+                {55, "D"},
+                {0, "F"}
+        };
+    }
+
+    @Test
+    @Parameters(method = "paramMidtermAndFinal")
+    @TestCaseName("Test getGradeSummationScore Params [{index}] : input is {0}, expect \"{1}\"")
+    public void testgetGradeSummationScore(double midtermScore , double finalScore , String expectedGrade){
+        GradeServiceImpl gradeService = new GradeServiceImpl();
+        assertThat(gradeService.getGrade(midtermScore,finalScore), is(expectedGrade));
+    }
+
+    public Object paramMidtermAndFinal(){
+        return new Object[][]{
+                {10 , 20 ,"F"},
+                {20 , 30 ,"D"},
+                {30 , 30 ,"C"},
+                {40 , 30 ,"B"},
+                {80 , 15 , "A"}
         };
     }
 }
